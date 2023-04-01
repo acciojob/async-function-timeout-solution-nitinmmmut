@@ -4,11 +4,18 @@ const btn = document.getElementById("btn");
 const output = document.getElementById("output");
 
 //your code here
-async function showMessage() {
-  const message = text.value;
-  const delayVal = delay.value;
-  await new Promise((resolve) => setTimeout(resolve, delayVal));
-  output.innerText = message;
+ function showMessage() {
+    const message = text.value;
+    const delayVal = delay.value; 
+  setTimeout (() =>{
+    givingValue();
+   },delayVal ) 
+  
+   async function givingValue (){
+    await showMessage();
+    output.innerHTML = message;
+   }
+  
 }
 
 btn.addEventListener("click", showMessage);
